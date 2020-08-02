@@ -23,8 +23,11 @@ export default class Login extends Component {
         }
         console.log("logindata", logindata)
         if (this.state.username === "admin" && this.state.password === "admin") {
-            {this.props.history.push('/Dashboard')}
             toast.success("Login Successfully")
+            setTimeout(() => {
+                { this.props.history.push('/dashboard') }
+            }, 1500);
+
         } else {
             toast.error("Enter Valid Input's")
         }
@@ -61,7 +64,7 @@ export default class Login extends Component {
                                         <input type="password" placeholder="Enter Password" className="form-control" name="password" onChange={this.changelogin} /><br></br>
                                     </div><br></br>
                                     {/* <Link to="/dashboard"> */}
-                                        <button type="button" className="btn btn-primary" onClick={this.login}>Login</button>
+                                    <button type="button" className="btn btn-primary" onClick={this.login}>Login</button>
                                     {/* </Link> */}
                                     <Link to="/signup">
                                         <button type="button" className="btn btn-success ml-2">Sign Up</button>
