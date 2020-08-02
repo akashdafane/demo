@@ -23,6 +23,7 @@ export default class Login extends Component {
         }
         console.log("logindata", logindata)
         if (this.state.username === "admin" && this.state.password === "admin") {
+            {this.props.history.push('/Dashboard')}
             toast.success("Login Successfully")
         } else {
             toast.error("Enter Valid Input's")
@@ -48,7 +49,7 @@ export default class Login extends Component {
                                                 <span className="fas fa-user"></span>
                                             </div>
                                         </div>
-                                        <input type="text" placeholder="Enter Usernam" className="form-control" id="username" name="username" onChange={this.changelogin} />
+                                        <input type="text" placeholder="Enter Username" className="form-control" id="username" name="username" onChange={this.changelogin} />
                                     </div><br></br>
                                     <label>Password</label>
                                     <div className="input-group">
@@ -59,9 +60,9 @@ export default class Login extends Component {
                                         </div>
                                         <input type="password" placeholder="Enter Password" className="form-control" name="password" onChange={this.changelogin} /><br></br>
                                     </div><br></br>
-                                    <Link to="/dashboard">
+                                    {/* <Link to="/dashboard"> */}
                                         <button type="button" className="btn btn-primary" onClick={this.login}>Login</button>
-                                    </Link>
+                                    {/* </Link> */}
                                     <Link to="/signup">
                                         <button type="button" className="btn btn-success ml-2">Sign Up</button>
                                     </Link>
